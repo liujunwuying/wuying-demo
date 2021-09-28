@@ -1,0 +1,27 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: wuying-demo
+  cloud:
+    consul:
+      port: 8500
+      host: 127.0.0.1
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=CST
+    username: root
+    password: test123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,metrics,prometheus
+
+wuying:
+  cloud:
+    mybatis:
+      support:
+        maxRow: 2
